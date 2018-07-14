@@ -24,7 +24,9 @@ class Application
         end
       end
     elsif req.path.match(/add/)
-      binding.pry
+      if @@items.include?(req.query_string.gsub("item=", ""))
+        
+      end
     else
       resp.write "Path Not Found"
     end
