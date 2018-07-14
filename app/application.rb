@@ -27,7 +27,7 @@ class Application
       item = req.query_string.gsub("item=", "")
       if @@items.include?(item)
         @@cart << item
-        puts "added #{item}"
+        resp.write "added #{item}"
       end
       binding.pry
     else
