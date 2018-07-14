@@ -29,6 +29,7 @@ class Application
         @@cart << item
         puts "added #{item}"
       end
+      binding.pry
     else
       resp.write "Path Not Found"
     end
