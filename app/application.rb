@@ -24,8 +24,10 @@ class Application
         end
       end
     elsif req.path.match(/add/)
-      if @@items.include?(req.query_string.gsub("item=", ""))
-        @@cart << req.query_string.gsub("item=", "")
+      item = req.query_string.gsub("item=", "")
+      if @@items.include?(item)
+        @@cart << item
+        puts "added #{item}"
       end
     else
       resp.write "Path Not Found"
